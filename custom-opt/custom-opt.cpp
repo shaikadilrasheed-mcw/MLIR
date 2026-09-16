@@ -10,9 +10,11 @@
 #include "custom/customDialect.h"
 #include "custom/customOps.h"
 #include "mlir/Pass/PassRegistry.h"
+#include "custom/customPasses.h"
 
 int main(int argc, char **argv) {
     mlir::registerAllPasses();
+    custom::registerCustomPasses(); 
     mlir::DialectRegistry registry;
     registry.insert<custom::CustomDialect, mlir::func::FuncDialect, mlir::arith::ArithDialect,
                     mlir::tosa::TosaDialect,mlir::linalg::LinalgDialect,
