@@ -11,6 +11,7 @@ target_link_libraries(custom-opt
     MLIRParser
     MLIRPass
     MLIRRegisterAllPasses
+    MLIRRegisterAllDialects      
     MLIRSupport
     MLIRFuncDialect
     MLIRArithDialect
