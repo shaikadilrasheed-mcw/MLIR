@@ -11,15 +11,14 @@
 #include "custom/customOps.h"
 #include "mlir/Pass/PassRegistry.h"
 #include "custom/customPasses.h"
+#include "mlir/InitAllDialects.h"
 
 int main(int argc, char **argv) {
     mlir::registerAllPasses();
     custom::registerCustomPasses(); 
     mlir::DialectRegistry registry;
-    registry.insert<custom::CustomDialect, mlir::func::FuncDialect, mlir::arith::ArithDialect,
-                    mlir::tosa::TosaDialect,mlir::linalg::LinalgDialect,
-                    mlir::memref::MemRefDialect, mlir::affine::AffineDialect
-                    >();
+    mlir::registerAllDialects(registry);
+    registry.insert<custom::CustomDialect>();
     return mlir::asMainReturnCode(
         mlir::MlirOptMain(argc, argv, "custom optimizer\n", registry));
 }
