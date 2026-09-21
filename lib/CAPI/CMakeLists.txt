@@ -1,0 +1,19 @@
+add_mlir_public_c_api_library(CustomCAPI
+  Dialects.cpp
+  Passes.cpp
+  LINK_LIBS PUBLIC
+  MLIRcustom
+  MLIRArithTransforms
+  MLIRTransforms
+  MLIRBufferizationTransforms
+  MLIRLinalgTransforms
+  MLIRSCFTransforms
+  MLIRTensorTransforms
+  MLIRReconcileUnrealizedCasts
+  MLIRMathToLLVM
+  MLIRArithToLLVM
+  MLIRSCFToControlFlow
+  MLIRControlFlowToLLVM
+  MLIRFuncToLLVM
+  MLIRMemRefToLLVM
+)

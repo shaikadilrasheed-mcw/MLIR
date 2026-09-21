@@ -1,4 +1,4 @@
-include "customDialect.td"
+include "custom/customDialect.td"
 include "mlir/IR/CommonAttrConstraints.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
 include "mlir/IR/CommonTypeConstraints.td"
