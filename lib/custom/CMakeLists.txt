@@ -3,6 +3,7 @@ add_mlir_dialect_library(MLIRcustom
 		customOps.cpp
 		customConvertToArith.cpp
 		customConvertToTosa.cpp
+		customConvertToLoops.cpp
 
         ADDITIONAL_HEADER_DIRS
         ${PROJECT_SOURCE_DIR}/include/custom
