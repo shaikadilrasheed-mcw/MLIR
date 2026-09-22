@@ -14,3 +14,7 @@ def CustomToTosaPass : Pass<"custom-to-tosa", "::mlir::ModuleOp"> {
         Lowers custom.add, custom.sub to their tosa dialect equivalents.
     }];
 }
+
+def CustomToLoopsPass : Pass<"custom-to-loops", "::mlir::ModuleOp"> {
+    let summary = "Lower custom.cumsum to scf loops + arith";
+}

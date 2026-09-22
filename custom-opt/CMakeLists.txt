@@ -19,6 +19,8 @@ target_link_libraries(custom-opt
     MLIRLinalgDialect
     MLIRMemRefDialect
     MLIRAffineDialect
+    MLIRBufferizationTransforms
+    MLIRBufferizationDialect
 )
 
 mlir_check_all_link_libraries(custom-opt)

@@ -32,3 +32,12 @@ def custom_constant : Custom_Op<"constant", [Pure]> {
     let results   = (outs I64:$result);
     let assemblyFormat = "$value attr-dict `:` type($result)";
 }
+
+def custom_cumsumOp : Custom_Op<"cumsum", [Pure]> {
+    let summary = "cumualtive sum";
+    let arguments = (ins TensorOf<[AnyInteger]> : $tensor, AnyInteger : $dim );
+    let results   = (outs AnyInteger : $result);
+    let assemblyFormat = "$tensor `,` $dim attr-dict `:` functional-type(operands, results)";
+}
+
+
