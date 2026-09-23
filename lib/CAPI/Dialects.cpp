@@ -8,6 +8,7 @@
 #include "mlir/Dialect/Bufferization/Transforms/FuncBufferizableOpInterfaceImpl.h"
 #include "mlir/Dialect/SCF/Transforms/BufferizableOpInterfaceImpl.h"
 #include "mlir/Dialect/Tensor/Transforms/BufferizableOpInterfaceImpl.h"
+#include "mlir/Dialect/Linalg/Transforms/BufferizableOpInterfaceImpl.h"
 // ... other MLIR interface headers ...
 
 void customRegisterAllExtensions(MlirDialectRegistry registry) {
@@ -16,6 +17,7 @@ void customRegisterAllExtensions(MlirDialectRegistry registry) {
   mlir::bufferization::func_ext::registerBufferizableOpInterfaceExternalModels(*reg);
   mlir::scf::registerBufferizableOpInterfaceExternalModels(*reg);
   mlir::tensor::registerBufferizableOpInterfaceExternalModels(*reg);
+  mlir::linalg::registerBufferizableOpInterfaceExternalModels(*reg);
   // ... etc.
 }
 

@@ -2,6 +2,7 @@ add_mlir_public_c_api_library(CustomCAPI
   Dialects.cpp
   Passes.cpp
   LINK_LIBS PUBLIC
+  MLIRRegisterAllPasses
   MLIRcustom
   MLIRArithTransforms
   MLIRTransforms

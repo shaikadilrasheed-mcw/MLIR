@@ -19,10 +19,10 @@ include "mlir/Pass/PassBase.td"
 //     let summary = "Lower custom.cumsum to scf loops + arith";
 // }
 
-def CustomToLoops : Pass<"custom-to-loops", "::mlir::ModuleOp"> {
-    let summary = "custom dialect to scf loops";
+def CustomToLLVM : Pass<"custom-to-llvm", "::mlir::ModuleOp"> {
+    let summary = "custom dialect to asn";
 }
 
 def CustomToTosa : Pass<"custom-to-tosa", "::mlir::ModuleOp"> {
-    let summary = "custom dialect to built-in tosa ";
+    let summary = "custom dialect to built-in tosa";
 }

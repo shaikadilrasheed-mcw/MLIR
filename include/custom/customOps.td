@@ -40,4 +40,16 @@ def custom_cumsumOp : Custom_Op<"cumsum", [Pure]> {
     let assemblyFormat = "$tensor `,` $dim attr-dict `:` functional-type(operands, results)";
 }
 
+def Custom_AddCMul : Custom_Op<"addcmul", [Pure, Commutative, SameOperandsAndResultType]> {
+    let summary = "multiply and add two values";
+    let arguments = (ins AnyTypeOf<[AnyInteger,TensorOf<[AnyInteger]>]> : $a, AnyTypeOf<[AnyInteger,TensorOf<[AnyInteger]>]> : $b, AnyTypeOf<[AnyInteger,TensorOf<[AnyInteger]>]> : $c );
+    let results   = (outs AnyTypeOf<[AnyInteger,TensorOf<[AnyInteger]>]> : $result);
+    let assemblyFormat = "$a `,` $b `,` $c attr-dict `:` type($result)";
+}
 
+def Custom_AddCDiv : Custom_Op<"addcdiv", [Pure, Commutative, SameOperandsAndResultType]> {
+    let summary = "divide and add two values";
+    let arguments = (ins AnyTypeOf<[AnyInteger,TensorOf<[AnyInteger]>]> : $a, AnyTypeOf<[AnyInteger,TensorOf<[AnyInteger]>]> : $b, AnyTypeOf<[AnyInteger,TensorOf<[AnyInteger]>]> : $c );
+    let results   = (outs AnyTypeOf<[AnyInteger,TensorOf<[AnyInteger]>]> : $result);
+    let assemblyFormat = "$a `,` $b `,` $c attr-dict `:` type($result)";
+}
